@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "Fj39al2013",
+    password: "password",
     database: "school"
 });
 
@@ -31,9 +31,8 @@ function start() {
         message: "What would you like to do?",
         name: "userChoice",
         type: "list",
-        choices: ["Create room or students", "Update room or student", "Read/View room or student", "Remove/delete room or student"]
+        choices: ["Create room or students", "Update room or student", "Read/View room or student", "Remove/delete room or student", "Quit"]
     }]).then(function (answer) {
-        console.log(answer);
         switch (answer.userChoice) {
             case "Create room or students":
                 createRoomOrStudent();
@@ -47,6 +46,8 @@ function start() {
             case "Remove/delete room or student":
                 deleteRoomOrStudent();
                 break;
+            case "Quit":
+                process.exit(0);
             default:
                 console.log("Please pick a valid command!");
                 start();
@@ -268,7 +269,6 @@ function deleteRoomOrStudent() {
         } else {
             connection.query("SELECT * FROM classroom", function(err, res){
                 if(err) throw err;
-                console.table(res);
                 inquirer.prompt([{
                     message: "Which classroom would you like to delete?",
                     type: "rawlist",
