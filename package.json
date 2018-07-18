@@ -1,0 +1,24 @@
+{
+  "name": "mysql-cbc-session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "school.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Travo100/mysql-cbc-session.git"
+  },
+  "author": "Travis Thompson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Travo100/mysql-cbc-session/issues"
+  },
+  "homepage": "https://github.com/Travo100/mysql-cbc-session#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^6.0.0",
+    "mysql": "^2.15.0"
+  }
+}
